@@ -155,7 +155,7 @@ Naturaly you can use 2 ways in same time.
 <?php
 //...
 
-public function executeTestMeteor(sfWebRequest $request)
+public function executeYourAction(sfWebRequest $request)
 { 
     $container = $this->getContainer();
     $service = $this->getService('your.service');
