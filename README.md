@@ -1,7 +1,6 @@
 # SyDependencyInjectionPlugin
 
-use [Symfony DependencyInjection Component SF2](https://github.com/symfony/DependencyInjection) on SF1
-IN PROGRESS.
+use [Symfony DependencyInjection Component SF2](https://github.com/symfony/DependencyInjection) on SF1.
 
 ## Requirements
 
@@ -52,7 +51,7 @@ class ProjectConfiguration extends sfProjectConfiguration
 Two possibilities:
 
 ### Locator files
-Simple and rapid way (not recommanded for big project)
+Simple and fast way (not recommanded for big project)
 In `app.yml`:
 
 ```yaml

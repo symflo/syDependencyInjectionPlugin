@@ -74,10 +74,7 @@ class syDependencyInjectionPluginConfiguration extends sfPluginConfiguration
     {
         $file = self::getServiceContainerFilename();
 
-        if (!sfConfig::get('sf_debug') && file_exists($file)) {
-            require_once $file;
-            $container = new ProjectServiceContainer();
-        } else {
+        if (sfConfig::get('sf_debug') || !file_exists($file)) {
             $container = new ContainerBuilder();
             $syContainerFileLoader = new SyContainerFileLoader($container);
             $syContainerFileLoader->loadExtensions();
@@ -88,6 +85,9 @@ class syDependencyInjectionPluginConfiguration extends sfPluginConfiguration
             file_put_contents($file, $dumper->dump());
             $this->dispatcher->notify(new sfEvent($container, 'dependency_injection_container.load_configuration'));
         }
+
+        require_once $file;
+        $container = new ProjectServiceContainer();
 
         $this->container = $container;
         $context = $event->getSubject();
