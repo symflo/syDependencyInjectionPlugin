@@ -16,7 +16,7 @@ In the `config/ProjectConfiguration.class.php` add:
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 ?>
-``
+```
 
 Add Symfony DependencyInjection Component in your `composer.json`
 
