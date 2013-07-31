@@ -1,0 +1,13 @@
+#all:
+#  syDependencyInjectionPlugin:
+#    locators:
+#      defaultFileLocators:
+#        dir: %SF_ROOT_DIR%/config/services
+#        files:
+#          - services.php
+#    extensions:
+#      - ProjectDefaultExtension
+#    compilerPass:
+#      custom:
+#        class: CustomCompilerPass
+#        #passConfig: #TYPE_BEFORE_OPTIMIZATION, TYPE_OPTIMIZE, TYPE_BEFORE_REMOVING, TYPE_REMOVE, TYPE_AFTER_REMOVING
