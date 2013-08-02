@@ -10,6 +10,8 @@
         }
     ],
     "require": {
-        "composer/installers": "*"
+        "composer/installers": "*",
+        "symfony/dependency-injection": "2.4.*@dev",
+        "symfony/config": "2.4.*@dev"
     }
 }
