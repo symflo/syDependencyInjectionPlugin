@@ -22,8 +22,7 @@ Add Symfony DependencyInjection Component in your `composer.json`
 ```shell
     "require": {
         ...
-        "symfony/dependency-injection": "2.4.*@dev",
-        "symfony/config": "2.4.*@dev",
+        "symflo/sy-dependency-injection-plugin": "dev-master"
         ...
     },
 ```
