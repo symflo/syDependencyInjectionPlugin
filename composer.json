@@ -1,0 +1,15 @@
+{
+    "name": "symflo/sy-dependency-injection-plugin",
+    "type": "symfony1-plugin",
+    "description": "symfony 1.x plugin for Symfony Dependency Injection component SF2.",
+    "keywords": ["symfony", "dependency", "injection"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "symflo"
+        }
+    ],
+    "require": {
+        "composer/installers": "*"
+    }
+}
