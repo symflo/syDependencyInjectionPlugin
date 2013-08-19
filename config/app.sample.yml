@@ -1,5 +1,6 @@
 #all:
 #  syDependencyInjectionPlugin:
+#    enabledDebug: true
 #    locators:
 #      defaultFileLocators:
 #        dir: %SF_ROOT_DIR%/config/services

@@ -56,6 +56,7 @@ In `app.yml`:
 ```yaml
 all:
   syDependencyInjectionPlugin:
+    enabledDebug: false #true by default - if false, it allows to avoid regenerate container in sf_debug environment
     locators:
       defaultFileLocators:
         dir: %SF_ROOT_DIR%/config/services
@@ -154,9 +155,26 @@ Naturaly you can use 2 ways in same time.
 //...
 
 public function executeYourAction(sfWebRequest $request)
-{ 
+{
     $container = $this->getContainer();
     $service = $this->getService('your.service');
+}
+
+//...
+?>
+```
+
+## Or for example in a Task
+
+```php
+<?php
+//...
+
+protected function execute($arguments = array(), $options = array())
+{
+    $context = sfContext::createInstance($this->configuration);
+    $container = $context->get('dependency_injection_container');
+    $service = $container->get('your.service');
 }
 
 //...

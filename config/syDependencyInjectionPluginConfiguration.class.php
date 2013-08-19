@@ -74,7 +74,7 @@ class syDependencyInjectionPluginConfiguration extends sfPluginConfiguration
     {
         $file = self::getServiceContainerFilename();
 
-        if (sfConfig::get('sf_debug') || !file_exists($file)) {
+        if (sfConfig::get('sf_debug') && sfConfig::get('app_syDependencyInjectionPlugin_enabledDebug', true) || !file_exists($file)) {
             $container = new ContainerBuilder();
             $syContainerFileLoader = new SyContainerFileLoader($container);
             $syContainerFileLoader->loadExtensions();
