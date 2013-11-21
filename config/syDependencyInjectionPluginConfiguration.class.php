@@ -76,6 +76,7 @@ class syDependencyInjectionPluginConfiguration extends sfPluginConfiguration
 
         if (sfConfig::get('sf_debug') && sfConfig::get('app_syDependencyInjectionPlugin_enabledDebug', true) || !file_exists($file)) {
             $container = new ContainerBuilder();
+            $this->dispatcher->notify(new sfEvent($container, 'dependency_injection_container.load_configuration'));
             $syContainerFileLoader = new SyContainerFileLoader($container);
             $syContainerFileLoader->loadExtensions();
             $syContainerFileLoader->loadFileLocators();
@@ -83,7 +84,6 @@ class syDependencyInjectionPluginConfiguration extends sfPluginConfiguration
             $container->compile();
             $dumper = new PhpDumper($container);
             file_put_contents($file, $dumper->dump());
-            $this->dispatcher->notify(new sfEvent($container, 'dependency_injection_container.load_configuration'));
         }
 
         require_once $file;
